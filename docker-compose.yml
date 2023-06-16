@@ -1,0 +1,9 @@
+services:
+  go-backend:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=golang
+      - POSTGRESQL_PASSWORD=golang
+      - POSTGRESQL_DATABASE=postgresql
