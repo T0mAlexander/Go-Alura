@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  gin-api-rest:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=golang
+      - POSTGRESQL_PASSWORD=golang
+      - POSTGRESQL_DATABASE=postgresql
