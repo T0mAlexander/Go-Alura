@@ -1,15 +1,24 @@
 package routes
 
 import (
-	"go-store/controllers"
+	"go-api-rest/controllers"
+	"go-api-rest/middleware"
+	"log"
 	"net/http"
+
+	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
 )
 
-func Routes() {
-	http.HandleFunc("/", controllers.Index)
-	http.HandleFunc("/create", controllers.Product)
-	http.HandleFunc("/insert", controllers.Insert)
-	http.HandleFunc("/delete", controllers.Delete)
-	http.HandleFunc("/edit", controllers.Edit)
-	http.HandleFunc("/update", controllers.Update)
+func HandleRequest() {
+	request := mux.NewRouter()
+	request.Use(middleware.ContentType)
+	request.HandleFunc("/", controllers.Home)
+	request.HandleFunc("/", controllers.Home)
+	request.HandleFunc("/personalities", controllers.AllPersonalities).Methods("GET")
+	request.HandleFunc("/personalities", controllers.CreatePerson).Methods("POST")
+	request.HandleFunc("/personalities/{id}", controllers.ReturnPersonality).Methods("GET")
+	request.HandleFunc("/personalities/{id}", controllers.EditPerson).Methods("PUT")
+	request.HandleFunc("/personalities/{id}", controllers.DeletePerson).Methods("DELETE")
+	log.Fatal(http.ListenAndServe(":3333", handlers.CORS(handlers.AllowedOrigins([]string{"*"}))(request)))
 }

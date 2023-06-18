@@ -1,5 +1,21 @@
-module go-store
+module go-api-rest
 
 go 1.20
 
-require github.com/lib/pq v1.10.9
+require (
+	github.com/gorilla/mux v1.8.0
+	github.com/jackc/pgpassfile v1.0.0
+	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a
+	github.com/jackc/pgx/v5 v5.4.0
+	github.com/jinzhu/inflection v1.0.0
+	github.com/jinzhu/now v1.1.5
+	golang.org/x/crypto v0.10.0
+	golang.org/x/text v0.10.0
+	gorm.io/driver/postgres v1.5.2
+	gorm.io/gorm v1.25.1
+)
+
+require (
+	github.com/felixge/httpsnoop v1.0.1 // indirect
+	github.com/gorilla/handlers v1.5.1 // indirect
+)

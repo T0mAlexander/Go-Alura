@@ -1,25 +1,33 @@
-# Projeto Go-Store
+# Go API Rest
 
 ## Descrição
 
-Este projeto é um exemplo de loja virtual com CRUD embarcado que performa as operações de persistências de dados mais básicas que são criação, edição, atualização e exclusão de produtos fictícios
+Projeto exemplar com backend e API REST construída com Golang e React
 
-## Bibliotecas e dependências
+## Biblioteca e dependências
 
-- **lib/pq:** driver de banco de dados para Golang bastante utilizado em desenvolvimento de aplicações que demandam acesso e interações com o PostgreSQL
+**GORM:** biblioteca de mapeamento objeto-relacional (ORM) para Go que facilita a interação com bancos de dados relacionais, fornecendo uma camada de abstração para criar, recuperar, atualizar e excluir registros de forma simplificada e eficiente.
+
+**GORM/Postgres:** driver que permite a integração entre o GORM e o banco de dados PostgreSQL, fornecendo funcionalidades específicas para conectar, executar consultas e manipular dados.
+
+**React**: biblioteca JavaScript de código aberto para construção de interfaces de usuário interativas e reativas.
+
+**Node.js:** ambiente de execução JavaScript assíncrono e orientado a eventos, projetado para criar aplicativos de rede escaláveis.
 
 ## Pré-requisitos
 
-- **[Docker](https://docs.docker.com/get-docker/)** instalado na máquina com versão mínima em 24.0.0
+* [Docker](https://docs.docker.com/get-docker/) instalado na máquina com versão mínima em 24.0.0
 
-- **[Golang](https://go.dev/dl/)** instalado na máquina com versão mínima em 1.20
+* [Golang](about:blank) instalado na máquina com versão mínima em 1.20
+
+* [Node.js](https://nodejs.org/en/download) instalado na máquina com versão mínima em 17.0.0
 
 ## Instruções de uso
 
 1. Clone o repositório
 
 ```bash
-git clone -b go-store https://github.com/T0mAlexander/Go-Alura
+git clone -b go-api-rest https://github.com/T0mAlexander/Go-Alura
 ```
 
 2. Navegue até o diretório
@@ -28,29 +36,33 @@ git clone -b go-store https://github.com/T0mAlexander/Go-Alura
 cd Go-Alura
 ```
 
-3. Construa e inicialize o container do Docker em sua máquina a partir do arquivo `docker-compose.yml`
+3. Construa e inicialize o container do Docker a partir do arquivo `docker-compose.yml`
 
 ```bash
 docker-compose up -d
 ```
 
-4. Compile e instancie o servidor
+4. Instale as dependências do front-end
 
 ```bash
-go run main.go
+npm install
 ```
 
-> Nota: o servidor irá ser executado na **porta 3333**. Para acessar a aplicação web, digite na sua barra de endereço [localhost:3333](http://localhost:3333)
+5. Inicialize o back-end e front-end
+
+```bash
+go run main.go && npm run start
+```
+
+> Nota: o back-end será inicializado na **porta 3333** enquanto que o front-end será renderizado automáticamente numa nova aba na **porta 3000**
 
 ## Modelagem do banco de dados
 
-| Coluna        | Tipo    | Descrição             |
-|---------------|---------|-----------------------|
-| Id            | Int     | Identificador único   |
-| Amount        | Int     | Quantidade            |
-| Name          | String  | Nome do produto       |
-| Description   | String  | Descrição do produto  |
-| Price         | Float64 | Preço do produto      |
+| Campo    | Tipo   | Tag JSON     |
+|----------|--------|--------------|
+| Id       | int    | json:"id"    |
+| Name     | string | json:"name"  |
+| History  | string | json:"history"|
 
 ## Termos de uso
 

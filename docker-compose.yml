@@ -1,5 +1,7 @@
+version: '3.8'
+
 services:
-  go-backend:
+  go-api-rest:
     image: bitnami/postgresql
     ports:
       - 5432:5432
