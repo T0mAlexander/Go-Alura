@@ -64,6 +64,16 @@ go run main.go && npm run start
 | Name     | string | json:"name"  |
 | History  | string | json:"history"|
 
+## Rotas da aplicação
+
+- **GET** "/": Função: `controllers.Home`
+- **GET** "/": Função: `controllers.Home`
+- **GET** "/personalities": Retorna todas as personalidades. Função: `controllers.AllPersonalities`
+- **POST** "/personalities": Cria uma nova personalidade. Função: `controllers.CreatePerson`
+- **GET** "/personalities/{id}": Retorna uma personalidade específica. Função: `controllers.ReturnPersonality`
+- **PUT** "/personalities/{id}": Edita uma personalidade específica. Função: `controllers.EditPerson`
+- **DELETE** "/personalities/{id}": Exclui uma personalidade específica. Função: `controllers.DeletePerson`
+
 ## Termos de uso
 
 Este projeto é de livre uso para outros sem nenhuma restrição para cópias ou forks 👍🏻
