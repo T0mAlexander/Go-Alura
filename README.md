@@ -16,11 +16,11 @@ Projeto exemplar com backend e API REST construída com Golang e React
 
 ## Pré-requisitos
 
-* [Docker](https://docs.docker.com/get-docker/) instalado na máquina com versão mínima em 24.0.0
+* **[Docker](https://docs.docker.com/get-docker/)** instalado na máquina com versão mínima em 24.0.0
 
-* [Golang](about:blank) instalado na máquina com versão mínima em 1.20
+* **[Golang](https://go.dev/dl/)** instalado na máquina com versão mínima em 1.20
 
-* [Node.js](https://nodejs.org/en/download) instalado na máquina com versão mínima em 17.0.0
+* **[Node.js](https://nodejs.org/en/download)** instalado na máquina com versão mínima em 17.0.0
 
 ## Instruções de uso
 
